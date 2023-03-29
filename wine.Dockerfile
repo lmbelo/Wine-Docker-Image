@@ -20,7 +20,7 @@ RUN dpkg --add-architecture i386 && \
     apt-get update -y && \
     # Wine 7.0 stable has some issues with some games I tested
     # Use Wine 7.11 staging instead
-    apt-get install -y --install-recommends winehq-staging
+    apt-get install -y --install-recommends winehq-staging && \
     # Winetricks
     apt-get install -y winetricks
     
