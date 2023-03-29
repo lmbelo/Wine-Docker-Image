@@ -125,3 +125,5 @@ $ WINEPREFIX=~/.wine64 wine WeChatSetup.exe
 $ WINEPREFIX=~/.wine64 wine ~/.wine64/drive_c/Program\ Files\ \(x86\)/Tencent/WeChat/WeChat.exe
 ```
 
+### Blog
+https://leimao.github.io/blog/Docker-Wine/
