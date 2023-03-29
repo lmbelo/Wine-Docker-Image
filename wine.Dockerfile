@@ -21,6 +21,9 @@ RUN dpkg --add-architecture i386 && \
     # Wine 7.0 stable has some issues with some games I tested
     # Use Wine 7.11 staging instead
     apt-get install -y --install-recommends winehq-staging
+    # Winetricks
+    apt-get install -y winetricks
+    
 
 # GStreamer plugins
 RUN apt-get update -y && \
@@ -51,15 +54,8 @@ RUN cd /tmp && \
     git clone https://github.com/kaueraal/run_scaled.git && \
     cp /tmp/run_scaled/run_scaled /usr/local/bin/
 
-# Install missing fonts for Chinese
-RUN apt-get update -y && \
-    apt-get install -y --install-recommends \
-        fonts-wqy-microhei
-
 # Install driver for Intel HD graphics
 RUN apt-get -y install libgl1-mesa-glx libgl1-mesa-dri
 
-ENV LC_ALL zh_CN.UTF-8
-ENV LANG zh_CN.UTF-8
 # Make sure the terminal is still English
 ENV LANGUAGE en_US.UTF-8
